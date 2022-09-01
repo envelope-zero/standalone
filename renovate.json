@@ -1,0 +1,116 @@
+{
+  "extends": ["group:monorepos", "group:recommended"],
+  "dependencyDashboard": true,
+  "pre-commit": {
+    "enabled": true
+  },
+  "labels": ["renovate"],
+  "rangeStrategy": "pin",
+  "rebaseWhen": "behind-base-branch",
+  "semanticCommits": "enabled",
+  "platformAutomerge": true,
+  "postUpdateOptions": ["gomodTidy"],
+  "regexManagers": [
+    {
+      "description": "Upgrade go version",
+      "fileMatch": ["(^workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$"],
+      "matchStrings": ["go-version:\\s(?<currentValue>.*)"],
+      "datasourceTemplate": "golang-version",
+      "depNameTemplate": "go"
+    },
+    {
+      "description": "Upgrade arbitrary go module versions in Makefiles",
+      "fileMatch": ["^Makefile"],
+      "matchStrings": [
+        "# renovate:\\sdatasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\s.*@(?<currentValue>.*)"
+      ]
+    },
+    {
+      "description": "Upgrade go minor for golangci-lint",
+      "fileMatch": ["^\\.golangci\\.yml"],
+      "matchStrings": ["lang-version: \"(?<currentValue>.*)\""],
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "golang/go",
+      "versioningTemplate": "docker"
+    },
+    {
+      "description": "Upgrade backend version in ldflags",
+      "fileMatch": ["^\\.goreleaser.yaml", "Makefile"],
+      "matchStrings": ["-X github.com/envelope-zero/backend/pkg/router.version=(?<currentValue>[^\"]*)\"?$"],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "envelope-zero/backend"
+    },
+    {
+      "description": "Update frontend extract command in Makefile",
+      "fileMatch": ["Makefile"],
+      "matchStrings": ["ghcr.io/envelope-zero/frontend:(?<currentValue>.*)"],
+      "depNameTemplate": "ghcr.io/envelope-zero/frontend",
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Remove v from backend version as it is used in the API version",
+      "matchPackageNames": ["envelope-zero/backend"],
+      "extractVersion": "^v(?<version>)"
+    },
+    {
+      "description": "Parse go version for golangci-lint from GitHub tags",
+      "extractVersion": "^go(?<version>\\d+\\.\\d+)",
+      "matchPackageNames": ["golang/go"],
+      "groupName": "go"
+    },
+    {
+      "description": "Automatically merge minor updates for GitHub actions and go dependencies",
+      "matchManagers": ["github-actions", "gomod"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "description": "Group go upgrades",
+      "matchPackageNames": ["go", "golang"],
+      "groupName": "go"
+    },
+    {
+      "description": "Group backend upgrades for ldflags and go.mod",
+      "matchPackageNames": ["envelope-zero/backend", "github.com/envelope-zero/backend"],
+      "groupName": "backend"
+    },
+    {
+      "description": "Bump patch version for backend patch updates",
+      "matchUpdateTypes": ["patch"],
+      "matchPackageNames": ["envelope-zero/backend", "github.com/envelope-zero/backend"],
+      "commitMessagePrefix": "fix(backend)"
+    },
+    {
+      "description": "Bump minor version for backend minor updates",
+      "matchUpdateTypes": ["minor"],
+      "matchPackageNames": ["envelope-zero/backend", "github.com/envelope-zero/backend"],
+      "commitMessagePrefix": "feat(backend)"
+    },
+    {
+      "description": "Bump major version for backend major updates",
+      "matchUpdateTypes": ["major"],
+      "matchPackageNames": ["envelope-zero/backend", "github.com/envelope-zero/backend"],
+      "commitMessagePrefix": "feat!(backend)"
+    },
+    {
+      "description": "Bump patch version for frontend patch updates",
+      "matchUpdateTypes": ["patch"],
+      "matchPackageNames": ["ghcr.io/envelope-zero/frontend"],
+      "commitMessagePrefix": "fix(frontend)"
+    },
+    {
+      "description": "Bump minor version for frontend minor updates",
+      "matchUpdateTypes": ["minor"],
+      "matchPackageNames": ["ghcr.io/envelope-zero/frontend"],
+      "commitMessagePrefix": "feat(frontend)"
+    },
+    {
+      "description": "Bump major version for frontend major updates",
+      "matchUpdateTypes": ["major"],
+      "matchPackageNames": ["ghcr.io/envelope-zero/frontend"],
+      "commitMessagePrefix": "feat!(frontend)"
+    }
+  ]
+}

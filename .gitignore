@@ -1,0 +1,16 @@
+coverage.out
+/standalone
+dist/
+tmp/
+/data
+
+# Created in the workflows but need to be ignored
+node_modules/
+package-lock.json
+package.json
+
+# VSCode logs
+.vscode/*.log
+
+# Frontend files
+/public

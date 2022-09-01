@@ -1,0 +1,52 @@
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -X github.com/envelope-zero/backend/pkg/router.version=1.0.1
+
+archives:
+  - replacements:
+      amd64: x86_64
+
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  use: github
+  groups:
+    - title: Features
+      regexp: "^.*feat[(\\w)]*:+.*$"
+      order: 0
+
+    - title: "Bug fixes"
+      regexp: "^.*fix[(\\w)]*:+.*$"
+      order: 1
+
+    - title: Others
+      order: 2
+
+    - title: "Dependency updates"
+      regexp: "^.*chore(deps):+.*$"
+      order: 3
+
+  filters:
+    # Commit messages matching the regexp listed here will be removed from
+    # the changelog
+    exclude:
+      - "^docs:"
+      - "^test:"
+
+dockers:
+  - dockerfile: Dockerfile.goreleaser
+    image_templates:
+      - "ghcr.io/envelope-zero/standalone:{{ .Tag }}"
+      - "ghcr.io/envelope-zero/standalone:v{{ .Major }}"
+      - "ghcr.io/envelope-zero/standalone:v{{ .Major }}.{{ .Minor }}"
+      - "ghcr.io/envelope-zero/standalone:latest"

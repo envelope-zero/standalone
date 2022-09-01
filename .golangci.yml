@@ -1,0 +1,32 @@
+issues:
+  fix: true
+
+  # Relax rules for tests
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - gocyclo
+        - errcheck
+        - dupl
+
+linters:
+  enable:
+    - gocyclo
+    - godot
+    - gofumpt
+    - goimports
+    - govet
+    - revive
+    - whitespace
+    - misspell
+
+linters-settings:
+  gofumpt:
+    lang-version: "1.19"
+    extra-rules: true
+  gocyclo:
+    min-complexity: 15
+
+  godot:
+    exclude:
+      - "^ @[A-Za-z]+ "
