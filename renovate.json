@@ -54,6 +54,7 @@
     {
       "description": "Remove v from backend version as it is used in the API version",
       "matchPackageNames": ["envelope-zero/backend"],
+      "matchDatasources": ["github-releases"],
       "extractVersion": "^v(?<version>)"
     },
     {
