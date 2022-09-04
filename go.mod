@@ -3,7 +3,7 @@ module github.com/envelope-zero/standalone
 go 1.19
 
 require (
-	github.com/envelope-zero/backend v1.0.2-0.20220904104639-9bdb60a4daa3
+	github.com/envelope-zero/backend v1.0.2
 	github.com/gin-contrib/static v0.0.2-0.20220829131751-3035101e2445
 	github.com/rs/zerolog v1.28.0
 )
