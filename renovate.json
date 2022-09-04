@@ -37,7 +37,7 @@
       "description": "Upgrade backend version in ldflags",
       "fileMatch": ["^\\.goreleaser.yaml", "Makefile"],
       "matchStrings": [
-        "-X github.com/envelope-zero/backend/pkg/router.version=(?<currentValue>[^\"]*)\"?$"
+        "-X github.com/envelope-zero/backend/pkg/router\\.version=(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "envelope-zero/backend"
