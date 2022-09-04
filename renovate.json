@@ -55,7 +55,7 @@
       "description": "Remove v from backend version as it is used in the API version",
       "matchPackageNames": ["envelope-zero/backend"],
       "matchDatasources": ["github-releases"],
-      "extractVersion": "^v(?<version>)"
+      "extractVersion": "^v(?<version>.*)"
     },
     {
       "description": "Parse go version for golangci-lint from GitHub tags",
