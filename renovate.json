@@ -88,7 +88,7 @@
         "envelope-zero/backend",
         "github.com/envelope-zero/backend"
       ],
-      "commitMessagePrefix": "fix(backend)"
+      "commitMessagePrefix": "fix(backend):"
     },
     {
       "description": "Bump minor version for backend minor updates",
@@ -97,7 +97,7 @@
         "envelope-zero/backend",
         "github.com/envelope-zero/backend"
       ],
-      "commitMessagePrefix": "feat(backend)"
+      "commitMessagePrefix": "feat(backend):"
     },
     {
       "description": "Bump major version for backend major updates",
@@ -106,25 +106,25 @@
         "envelope-zero/backend",
         "github.com/envelope-zero/backend"
       ],
-      "commitMessagePrefix": "feat!(backend)"
+      "commitMessagePrefix": "feat!(backend):"
     },
     {
       "description": "Bump patch version for frontend patch updates",
       "matchUpdateTypes": ["patch"],
       "matchPackageNames": ["ghcr.io/envelope-zero/frontend"],
-      "commitMessagePrefix": "fix(frontend)"
+      "commitMessagePrefix": "fix(frontend):"
     },
     {
       "description": "Bump minor version for frontend minor updates",
       "matchUpdateTypes": ["minor"],
       "matchPackageNames": ["ghcr.io/envelope-zero/frontend"],
-      "commitMessagePrefix": "feat(frontend)"
+      "commitMessagePrefix": "feat(frontend):"
     },
     {
       "description": "Bump major version for frontend major updates",
       "matchUpdateTypes": ["major"],
       "matchPackageNames": ["ghcr.io/envelope-zero/frontend"],
-      "commitMessagePrefix": "feat!(frontend)"
+      "commitMessagePrefix": "feat!(frontend):"
     }
   ]
 }
