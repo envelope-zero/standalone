@@ -25,16 +25,6 @@ Once those are installed, run `make setup` to perform the repository setup.
 This project uses [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/)
 to enable better overview over changes and enables automated tooling based on commit messages.
 
-## Tests & test coverage
-
-We try to test as much as possible. However, tests are only one indicator for a functioning codebase.
-We do not aim to cover 100% of code, but use test coverage as a helpful indicator to point out code paths we should test.
-
-Please do:
-
-- try to add tests for everything you add to the codebase. If you're unsure about how to test, please open a pull request and ask for input so we can work on it together!
-- add regression tests for bug fixes
-
 ## Releases & Versioning
 
 Releases are fully automated and happen on every _feature_ and _bug fix_ that is merged into the `main` branch.
