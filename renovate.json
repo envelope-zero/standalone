@@ -36,7 +36,9 @@
     {
       "description": "Upgrade backend version in ldflags",
       "fileMatch": ["^\\.goreleaser.yaml", "Makefile"],
-      "matchStrings": ["-X github.com/envelope-zero/backend/pkg/router.version=(?<currentValue>[^\"]*)\"?$"],
+      "matchStrings": [
+        "-X github.com/envelope-zero/backend/pkg/router.version=(?<currentValue>[^\"]*)\"?$"
+      ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "envelope-zero/backend"
     },
@@ -73,25 +75,37 @@
     },
     {
       "description": "Group backend upgrades for ldflags and go.mod",
-      "matchPackageNames": ["envelope-zero/backend", "github.com/envelope-zero/backend"],
+      "matchPackageNames": [
+        "envelope-zero/backend",
+        "github.com/envelope-zero/backend"
+      ],
       "groupName": "backend"
     },
     {
       "description": "Bump patch version for backend patch updates",
       "matchUpdateTypes": ["patch"],
-      "matchPackageNames": ["envelope-zero/backend", "github.com/envelope-zero/backend"],
+      "matchPackageNames": [
+        "envelope-zero/backend",
+        "github.com/envelope-zero/backend"
+      ],
       "commitMessagePrefix": "fix(backend)"
     },
     {
       "description": "Bump minor version for backend minor updates",
       "matchUpdateTypes": ["minor"],
-      "matchPackageNames": ["envelope-zero/backend", "github.com/envelope-zero/backend"],
+      "matchPackageNames": [
+        "envelope-zero/backend",
+        "github.com/envelope-zero/backend"
+      ],
       "commitMessagePrefix": "feat(backend)"
     },
     {
       "description": "Bump major version for backend major updates",
       "matchUpdateTypes": ["major"],
-      "matchPackageNames": ["envelope-zero/backend", "github.com/envelope-zero/backend"],
+      "matchPackageNames": [
+        "envelope-zero/backend",
+        "github.com/envelope-zero/backend"
+      ],
       "commitMessagePrefix": "feat!(backend)"
     },
     {

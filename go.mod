@@ -2,7 +2,11 @@ module github.com/envelope-zero/standalone
 
 go 1.19
 
-require github.com/envelope-zero/backend v1.0.2-0.20220904104639-9bdb60a4daa3
+require (
+	github.com/envelope-zero/backend v1.0.2-0.20220904104639-9bdb60a4daa3
+	github.com/gin-contrib/static v0.0.2-0.20220829131751-3035101e2445
+	github.com/rs/zerolog v1.28.0
+)
 
 require (
 	github.com/KyleBanks/depth v1.2.1 // indirect
@@ -10,7 +14,6 @@ require (
 	github.com/gin-contrib/logger v0.2.2 // indirect
 	github.com/gin-contrib/requestid v0.0.5 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
-	github.com/gin-contrib/static v0.0.2-0.20220829131751-3035101e2445 // indirect
 	github.com/gin-gonic/gin v1.8.1 // indirect
 	github.com/glebarez/go-sqlite v1.18.1 // indirect
 	github.com/glebarez/sqlite v1.4.6 // indirect
@@ -35,7 +38,6 @@ require (
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.2 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20200410134404-eec4a21b6bb0 // indirect
-	github.com/rs/zerolog v1.28.0 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/swaggo/files v0.0.0-20220728132757-551d4a08d97a // indirect
 	github.com/swaggo/gin-swagger v1.5.2 // indirect
