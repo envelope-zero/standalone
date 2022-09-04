@@ -13,8 +13,6 @@ github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
-github.com/envelope-zero/backend v1.0.2-0.20220831085259-75e7baa8d0ff h1:Da7RCj1hevMUvFif97TcoQ387yXEwZMP+6mQr9OCYy8=
-github.com/envelope-zero/backend v1.0.2-0.20220831085259-75e7baa8d0ff/go.mod h1:65LleNU3mGyeorrVS12igNzKzlVMOZnuYAEHOvuir/Q=
 github.com/envelope-zero/backend v1.0.2-0.20220904104639-9bdb60a4daa3 h1:ABfP0lKyPmw/Q1d5OZEnnrUE1zMCaMPLggjYzndM4Hk=
 github.com/envelope-zero/backend v1.0.2-0.20220904104639-9bdb60a4daa3/go.mod h1:65LleNU3mGyeorrVS12igNzKzlVMOZnuYAEHOvuir/Q=
 github.com/ghodss/yaml v1.0.0/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
@@ -28,11 +26,8 @@ github.com/gin-contrib/requestid v0.0.5 h1:FUlpVNV4t4cjLIo7eymDCmcrOZFUKw8MYR/OP
 github.com/gin-contrib/requestid v0.0.5/go.mod h1:XPQVdKpTWib9e2zNdde+KcPYvvlLR81YCqFdiZTwAIM=
 github.com/gin-contrib/sse v0.1.0 h1:Y/yl/+YNO8GZSjAhjMsSuLt29uWRFHdHYUb5lYOV9qE=
 github.com/gin-contrib/sse v0.1.0/go.mod h1:RHrZQHXnP2xjPF+u1gW/2HnVO7nvIa9PG3Gm+fLHvGI=
-github.com/gin-contrib/static v0.0.1 h1:JVxuvHPuUfkoul12N7dtQw7KRn/pSMq7Ue1Va9Swm1U=
-github.com/gin-contrib/static v0.0.1/go.mod h1:CSxeF+wep05e0kCOsqWdAWbSszmc31zTIbD8TvWl7Hs=
 github.com/gin-contrib/static v0.0.2-0.20220829131751-3035101e2445 h1:EkQjMu2ji99rYIJSJF3k5qN5C+uJmdZApu6ccSXBc60=
 github.com/gin-contrib/static v0.0.2-0.20220829131751-3035101e2445/go.mod h1:yw2sjzOx5NdfxoYPrmAdq/UizX4iOjfSc2L4e/P4iDk=
-github.com/gin-gonic/gin v1.6.3/go.mod h1:75u5sXoLsGZoRN5Sgbi1eraJ4GU3++wFwWzhwvtwp4M=
 github.com/gin-gonic/gin v1.7.2/go.mod h1:jD2toBW3GZUr5UMcdrwQA10I7RuaFOl/SGeDjXkfUtY=
 github.com/gin-gonic/gin v1.8.1 h1:4+fr/el88TOO3ewCmQr8cx/CtZ/umlIRIs5M4NTNjf8=
 github.com/gin-gonic/gin v1.8.1/go.mod h1:ji8BvRH1azfM+SYow9zQ6SZMvR8qOMZHmsCuWR9tTTk=
@@ -62,7 +57,6 @@ github.com/go-playground/locales v0.14.0/go.mod h1:sawfccIbzZTqEDETgFXqTho0QybSa
 github.com/go-playground/universal-translator v0.17.0/go.mod h1:UkSxE5sNxxRwHyU+Scu5vgOQjsIJAF8j9muTVoKLVtA=
 github.com/go-playground/universal-translator v0.18.0 h1:82dyy6p4OuJq4/CByFNOn/jYrnRPArHwAcmLoJZxyho=
 github.com/go-playground/universal-translator v0.18.0/go.mod h1:UvRDBj+xPUEGrFYl+lu/H90nyDXpg0fqeB/AQUGNTVA=
-github.com/go-playground/validator/v10 v10.2.0/go.mod h1:uOYAAleCW8F/7oMFd6aG0GOhaH6EGOAJShg8Id5JGkI=
 github.com/go-playground/validator/v10 v10.4.1/go.mod h1:nlOn6nFhuKACm19sB/8EGNn9GlaMV7XkbRSipzJ0Ii4=
 github.com/go-playground/validator/v10 v10.10.0/go.mod h1:74x4gJWsvQexRdW8Pn3dXSGrTK4nAUsbPlLADvpJkos=
 github.com/go-playground/validator/v10 v10.11.0 h1:0W+xRM511GY47Yy3bZUbJVitCNg2BOGlCyvTqsp/xIw=
