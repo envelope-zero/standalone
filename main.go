@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+	"embed"
+	"io/fs"
 	"net/http"
 	"os"
 	"os/signal"
@@ -14,6 +16,32 @@ import (
 	"github.com/gin-contrib/static"
 	"github.com/rs/zerolog/log"
 )
+
+// Embedding code taken from https://github.com/gin-contrib/static/issues/19#issue-830589998
+//
+// Embed the "public" directory as filesystem
+//
+//go:embed public
+var server embed.FS
+
+type embedFileSystem struct {
+	http.FileSystem
+}
+
+func (e embedFileSystem) Exists(prefix string, path string) bool {
+	_, err := e.Open(path)
+	return err == nil
+}
+
+func EmbedFolder(fsEmbed embed.FS, targetPath string) static.ServeFileSystem {
+	fsys, err := fs.Sub(fsEmbed, targetPath)
+	if err != nil {
+		log.Fatal().Msg(err.Error())
+	}
+	return embedFileSystem{
+		FileSystem: http.FS(fsys),
+	}
+}
 
 func main() {
 	err := database.Database()
@@ -34,10 +62,11 @@ func main() {
 		log.Fatal().Msg(err.Error())
 	}
 
+	// Attach all backend routes to /api
 	router.AttachRoutes(r.Group("/api/"))
 
-	// Serve the static content
-	r.Use(static.Serve("/", static.LocalFile("public", true)))
+	// Serve the frontend on /
+	r.Use(static.Serve("/", EmbedFolder(server, "public")))
 
 	// The following code is taken from https://github.com/gin-gonic/examples/blob/91fb0d925b3935d2c6e4d9336d78cf828925789d/graceful-shutdown/graceful-shutdown/notify-without-context/server.go
 	// and has been modified to not wait for the timeout to expire before returning
