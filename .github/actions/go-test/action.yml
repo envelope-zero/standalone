@@ -16,4 +16,5 @@ runs:
     - name: Run go tests
       shell: bash
       run: |
+        make frontend
         go test ./... -race -covermode=atomic

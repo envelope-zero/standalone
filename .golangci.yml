@@ -9,6 +9,11 @@ issues:
         - errcheck
         - dupl
 
+    - path: main.go
+      linters:
+        - typecheck
+      text: "pattern public: no matching files found"
+
 linters:
   enable:
     - gocyclo

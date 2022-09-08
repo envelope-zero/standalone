@@ -9,7 +9,7 @@ setup: setup-pre-commit-ci
 	go install github.com/cosmtrek/air@latest
 
 .PHONY: devserver
-devserver:
+devserver: frontend
 	GIN_MODE=debug air
 
 .PHONY: test

@@ -11,6 +11,10 @@ builds:
     ldflags:
       - -X github.com/envelope-zero/backend/pkg/router.version=1.0.2
 
+    # Extract the frontend files so that we can embed them
+    hooks:
+      pre: make frontend
+
 archives:
   - replacements:
       amd64: x86_64
