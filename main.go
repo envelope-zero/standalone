@@ -10,6 +10,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/envelope-zero/backend/pkg/controllers"
 	"github.com/envelope-zero/backend/pkg/database"
 	"github.com/envelope-zero/backend/pkg/models"
 	"github.com/envelope-zero/backend/pkg/router"
@@ -44,15 +45,17 @@ func EmbedFolder(fsEmbed embed.FS, targetPath string) static.ServeFileSystem {
 }
 
 func main() {
-	err := database.Database()
+	db, err := database.Connect("data/gorm.db?_pragma=foreign_keys(1)")
 	if err != nil {
 		log.Fatal().Msg(err.Error())
 	}
 
-	err = models.MigrateDatabase()
+	err = models.Migrate(db)
 	if err != nil {
 		log.Fatal().Msg(err.Error())
 	}
+
+	controller := controllers.Controller{DB: db}
 
 	// Set the API_URL
 	os.Setenv("API_URL", "http://localhost:3200/api")
@@ -63,7 +66,7 @@ func main() {
 	}
 
 	// Attach all backend routes to /api
-	router.AttachRoutes(r.Group("/api/"))
+	router.AttachRoutes(controller, r.Group("/api/"))
 
 	// Serve the frontend on /
 	r.Use(static.Serve("/", EmbedFolder(server, "public")))
