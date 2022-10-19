@@ -6,6 +6,7 @@ require (
 	github.com/envelope-zero/backend v1.8.0
 	github.com/gin-contrib/static v0.0.2-0.20220829131751-3035101e2445
 	github.com/rs/zerolog v1.28.0
+	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
 )
 
 require (

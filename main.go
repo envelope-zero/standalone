@@ -16,6 +16,7 @@ import (
 	"github.com/envelope-zero/backend/pkg/router"
 	"github.com/gin-contrib/static"
 	"github.com/rs/zerolog/log"
+	"github.com/skratchdot/open-golang/open"
 )
 
 // Embedding code taken from https://github.com/gin-contrib/static/issues/19#issue-830589998
@@ -77,6 +78,8 @@ func main() {
 		Addr:    ":3200",
 		Handler: r,
 	}
+
+	_ = open.Run("http://localhost:3200")
 
 	// Wait for interrupt signal to gracefully shutdown the server with a timeout of 5 seconds.
 	quit := make(chan os.Signal, 1)
