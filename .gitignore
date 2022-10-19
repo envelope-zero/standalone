@@ -3,6 +3,7 @@ coverage.out
 dist/
 tmp/
 /data
+.DS_Store
 
 # Created in the workflows but need to be ignored
 node_modules/

@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"embed"
+	"fmt"
 	"io/fs"
 	"net/http"
 	"os"
@@ -10,11 +11,13 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/adrg/xdg"
 	"github.com/envelope-zero/backend/pkg/controllers"
 	"github.com/envelope-zero/backend/pkg/database"
 	"github.com/envelope-zero/backend/pkg/models"
 	"github.com/envelope-zero/backend/pkg/router"
 	"github.com/gin-contrib/static"
+	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"github.com/skratchdot/open-golang/open"
 )
@@ -46,7 +49,17 @@ func EmbedFolder(fsEmbed embed.FS, targetPath string) static.ServeFileSystem {
 }
 
 func main() {
-	db, err := database.Connect("data/gorm.db?_pragma=foreign_keys(1)")
+	zerolog.SetGlobalLevel(zerolog.InfoLevel)
+
+	dbPath, err := xdg.DataFile("envelope-zero/envelope-zero.db")
+	if err != nil {
+		log.Fatal().Msg(err.Error())
+	}
+	log.Info().Str("database file", dbPath).Msg("Init")
+
+	dbConnectionOptions := "_pragma=foreign_keys(1)"
+
+	db, err := database.Connect(fmt.Sprintf("%s?%s", dbPath, dbConnectionOptions))
 	if err != nil {
 		log.Fatal().Msg(err.Error())
 	}

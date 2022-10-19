@@ -24,12 +24,3 @@ Once those are installed, run `make setup` to perform the repository setup.
 
 This project uses [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/)
 to enable better overview over changes and enables automated tooling based on commit messages.
-
-## Releases & Versioning
-
-Releases are fully automated and happen on every _feature_ and _bug fix_ that is merged into the `main` branch.
-
-Versioning strictly adheres to [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) with the following additions:
-
-- If the Envelope Zero backend or frontend are updated, the version bump is the same as for the dependency that is updated
-- If a release with only dependency updates is made, it incerases the `PATCH` version.
