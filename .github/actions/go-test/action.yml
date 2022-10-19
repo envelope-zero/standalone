@@ -18,3 +18,11 @@ runs:
       run: |
         make frontend
         go test ./... -race -covermode=atomic
+
+      # This builds the binary and starts it. If it does not exit within 3 seconds, consider it
+      # successful
+    - name: Verify binary works
+      shell: bash
+      run: |
+        make build
+        timeout 3 ./standalone || code=$?; if [[ $code -ne 124 && $code -ne 0 ]]; then exit $code; fi
