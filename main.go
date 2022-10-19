@@ -29,7 +29,7 @@ type embedFileSystem struct {
 	http.FileSystem
 }
 
-func (e embedFileSystem) Exists(prefix string, path string) bool {
+func (e embedFileSystem) Exists(prefix, path string) bool {
 	_, err := e.Open(path)
 	return err == nil
 }
