@@ -12,7 +12,7 @@ ARG VERSION=0.0.0
 RUN CGO_ENABLED=0 make build VERSION=${VERSION}
 
 # Get frontend files from current version
-FROM ghcr.io/envelope-zero/frontend:0.20.0 as frontend
+FROM ghcr.io/envelope-zero/frontend:1.1.0 as frontend
 
 # Build final image
 FROM scratch
