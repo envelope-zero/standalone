@@ -16,7 +16,6 @@ import (
 	"github.com/envelope-zero/backend/pkg/database"
 	"github.com/envelope-zero/backend/pkg/models"
 	"github.com/envelope-zero/backend/pkg/router"
-	"github.com/getlantern/systray"
 	"github.com/gin-contrib/static"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -50,16 +49,6 @@ func EmbedFolder(fsEmbed embed.FS, targetPath string) static.ServeFileSystem {
 }
 
 func main() {
-	systray.Run(onReady, func() {})
-}
-
-func onReady() {
-	systray.SetTitle("Envelope Zero")
-	systray.SetTooltip("Envelope Budgeting for everyone")
-	trayOpen := systray.AddMenuItem("Open", "Open Envelope Zero")
-	systray.AddSeparator()
-	trayQuit := systray.AddMenuItem("Quit", "Stop Envelope Zero")
-
 	zerolog.SetGlobalLevel(zerolog.InfoLevel)
 
 	dbPath, err := xdg.DataFile("envelope-zero/envelope-zero.db")
@@ -103,6 +92,12 @@ func onReady() {
 		Handler: r,
 	}
 
+	_ = open.Run("http://localhost:3200")
+
+	// Wait for interrupt signal to gracefully shutdown the server with a timeout of 5 seconds.
+	quit := make(chan os.Signal, 1)
+	signal.Notify(quit, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
+
 	go func() {
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatal().Str("event", "Error during startup").Err(err).Msg("Router")
@@ -110,40 +105,15 @@ func onReady() {
 	}()
 	log.Info().Str("event", "Startup complete").Msg("Router")
 
-	// Wait for interrupt signal to gracefully shutdown the server with a timeout of 5 seconds.
-	quit := make(chan os.Signal, 1)
-	signal.Notify(quit, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
+	<-quit
+	log.Info().Str("event", "Received SIGINT or SIGTERM, stopping gracefully with 25 seconds timeout").Msg("Router")
 
-	// Handle tray events
-	go func() {
-		for {
-			select {
-			case <-trayOpen.ClickedCh:
-				_ = open.Run("http://localhost:3200")
+	// Create a context with a 25 second timeout for the server to shut down in
+	ctx, cancel := context.WithTimeout(context.Background(), 25*time.Second)
+	defer cancel()
 
-			// Pass SIGTERM to the server shutdown handler if Quit is clicked
-			case <-trayQuit.ClickedCh:
-				quit <- syscall.SIGTERM
-			}
-		}
-	}()
-
-	go func() {
-	}()
-
-	go func() {
-		<-quit
-		log.Info().Str("event", "Received SIGINT or SIGTERM, stopping gracefully with 1 second timeout").Msg("Router")
-
-		// Create a context with a 1 second timeout for the server to shut down in
-		ctx, cancel := context.WithTimeout(context.Background(), 1*time.Second)
-		defer cancel()
-
-		if err := srv.Shutdown(ctx); err != nil {
-			log.Fatal().Str("event", "Graceful shutdown failed, terminating").Err(err).Msg("Router")
-		}
-		log.Info().Str("event", "Backend stopped").Msg("Router")
-
-		systray.Quit()
-	}()
+	if err := srv.Shutdown(ctx); err != nil {
+		log.Fatal().Str("event", "Graceful shutdown failed, terminating").Err(err).Msg("Router")
+	}
+	log.Info().Str("event", "Backend stopped").Msg("Router")
 }

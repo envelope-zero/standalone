@@ -65,7 +65,13 @@
     },
     {
       "description": "Automatically merge minor updates",
-      "matchManagers": ["github-actions", "gomod", "pre-commit", "regex"],
+      "matchManagers": [
+        "github-actions",
+        "gomod",
+        "dockerfile",
+        "pre-commit",
+        "regex"
+      ],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     },
