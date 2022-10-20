@@ -36,14 +36,10 @@ jobs:
       - name: Extract frontend files
         run: make frontend
 
-      - name: Install GoReleaser
+      - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v3
         with:
-          install-only: true
-
-      - name: Run GoReleaser
-        run: |
-          sudo apt-get install gcc libgtk-3-dev libayatana-appindicator3-dev
-          goreleaser release --rm-dist
+          version: latest
+          args: release --rm-dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
