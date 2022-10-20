@@ -1,6 +1,6 @@
 builds:
   - env:
-      - CGO_ENABLED=1
+      - CGO_ENABLED=0
     goos:
       - linux
       - windows
@@ -42,3 +42,11 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
+
+dockers:
+  - dockerfile: Dockerfile.goreleaser
+    image_templates:
+      - "ghcr.io/envelope-zero/standalone:{{ .Tag }}"
+      - "ghcr.io/envelope-zero/standalone:v{{ .Major }}"
+      - "ghcr.io/envelope-zero/standalone:v{{ .Major }}.{{ .Minor }}"
+      - "ghcr.io/envelope-zero/standalone:latest"

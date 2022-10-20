@@ -6,12 +6,7 @@
 
 ### Quick start
 
-Download the latest release and start the executable. This will do two things:
-
-- A terminal will open, showing the log output you can ignore this
-- A tray item “Envelope Zero“ will be created with options to open Envelope Zero (which will open it in your browser) and to quit the app.
-
-If the tray does not work for some reason, you can always open http://localhost:3200 directly in your browser.
+Download the latest release and start the executable.
 
 ## Backing up of data
 
