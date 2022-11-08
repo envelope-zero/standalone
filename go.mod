@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/adrg/xdg v0.4.0
-	github.com/envelope-zero/backend v1.9.0
+	github.com/envelope-zero/backend v1.10.0
 	github.com/gin-contrib/static v0.0.2-0.20220829131751-3035101e2445
 	github.com/rs/zerolog v1.28.0
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
