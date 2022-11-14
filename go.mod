@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/adrg/xdg v0.4.0
-	github.com/envelope-zero/backend v1.10.1
+	github.com/envelope-zero/backend v1.11.0
 	github.com/gin-contrib/static v0.0.2-0.20220829131751-3035101e2445
 	github.com/rs/zerolog v1.28.0
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
@@ -14,6 +14,7 @@ require (
 	github.com/KyleBanks/depth v1.2.1 // indirect
 	github.com/gin-contrib/cors v1.4.0 // indirect
 	github.com/gin-contrib/logger v0.2.5 // indirect
+	github.com/gin-contrib/pprof v1.4.0 // indirect
 	github.com/gin-contrib/requestid v0.0.6 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/gin-gonic/gin v1.8.1 // indirect
@@ -47,7 +48,7 @@ require (
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	github.com/wei840222/gorm-zerolog v0.0.0-20210303025759-235c42bb33fa // indirect
 	golang.org/x/crypto v0.0.0-20220622213112-05595931fe9d // indirect
-	golang.org/x/exp v0.0.0-20221108204230-3ae49d0fc9cf // indirect
+	golang.org/x/exp v0.0.0-20221114172223-0cf76af32a3a // indirect
 	golang.org/x/net v0.1.0 // indirect
 	golang.org/x/sys v0.1.0 // indirect
 	golang.org/x/text v0.4.0 // indirect
