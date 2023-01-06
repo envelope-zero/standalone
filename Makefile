@@ -22,11 +22,11 @@ coverage: test
 
 .PHONY: frontend
 frontend:
-	docker create --name frontend-extract ghcr.io/envelope-zero/frontend:1.7.0
+	docker create --name frontend-extract ghcr.io/envelope-zero/frontend:1.9.0
 	docker cp frontend-extract:/usr/share/nginx/html public/
 	docker rm frontend-extract
 
 VERSION ?= $(shell git rev-parse HEAD)
 .PHONY: build
 build:
-	go build -ldflags "-X github.com/envelope-zero/backend/pkg/router.version=1.18.0"
+	go build -ldflags "-X github.com/envelope-zero/backend/pkg/router.version=2.0.1"
