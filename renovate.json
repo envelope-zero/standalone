@@ -1,5 +1,4 @@
 {
-  "extends": ["group:monorepos", "group:recommended"],
   "dependencyDashboard": true,
   "pre-commit": {
     "enabled": true
@@ -51,6 +50,12 @@
     }
   ],
   "packageRules": [
+    {
+      "description": "Pin GitHub action digests",
+      "matchDepTypes": ["action"],
+      "rangeStrategy": "pin",
+      "pinDigests": true
+    },
     {
       "description": "Remove v from backend version as it is used in the API version",
       "matchPackageNames": ["envelope-zero/backend"],
