@@ -32,8 +32,8 @@ github.com/gin-contrib/requestid v0.0.6 h1:mGcxTnHQ45F6QU5HQRgQUDsAfHprD3P7g2uZ4
 github.com/gin-contrib/requestid v0.0.6/go.mod h1:9i4vKATX/CdggbkY252dPVasgVucy/ggBeELXuQztm4=
 github.com/gin-contrib/sse v0.1.0 h1:Y/yl/+YNO8GZSjAhjMsSuLt29uWRFHdHYUb5lYOV9qE=
 github.com/gin-contrib/sse v0.1.0/go.mod h1:RHrZQHXnP2xjPF+u1gW/2HnVO7nvIa9PG3Gm+fLHvGI=
-github.com/gin-contrib/static v0.0.2-0.20220829131751-3035101e2445 h1:EkQjMu2ji99rYIJSJF3k5qN5C+uJmdZApu6ccSXBc60=
-github.com/gin-contrib/static v0.0.2-0.20220829131751-3035101e2445/go.mod h1:yw2sjzOx5NdfxoYPrmAdq/UizX4iOjfSc2L4e/P4iDk=
+github.com/gin-contrib/static v0.0.2-0.20230212012409-6f6aff627ddf h1:rKTF+cAJ7Rvl/mNiKWtBsu1yOuxYm/z/Q5SW+ToLftQ=
+github.com/gin-contrib/static v0.0.2-0.20230212012409-6f6aff627ddf/go.mod h1:yw2sjzOx5NdfxoYPrmAdq/UizX4iOjfSc2L4e/P4iDk=
 github.com/gin-gonic/gin v1.8.1/go.mod h1:ji8BvRH1azfM+SYow9zQ6SZMvR8qOMZHmsCuWR9tTTk=
 github.com/gin-gonic/gin v1.8.2 h1:UzKToD9/PoFj/V4rvlKqTRKnQYyz8Sc1MJlv4JHPtvY=
 github.com/gin-gonic/gin v1.8.2/go.mod h1:qw5AYuDrzRTnhvusDsrov+fDIxp9Dleuu12h8nfB398=
