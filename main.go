@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/fs"
 	"net/http"
+	"net/url"
 	"os"
 	"os/signal"
 	"syscall"
@@ -69,12 +70,14 @@ func main() {
 		log.Fatal().Msg(err.Error())
 	}
 
-	controller := controllers.Controller{DB: db}
+	url, _ := url.Parse("http://localhost:3200/api")
 
-	// Set the API_URL
-	os.Setenv("API_URL", "http://localhost:3200/api")
+	// Set the DB context and add it to the controller
+	ctx := context.Background()
+	ctx = context.WithValue(ctx, database.ContextURL, url)
+	controller := controllers.Controller{DB: db.WithContext(ctx)}
 
-	r, err := router.Config()
+	r, err := router.Config(url)
 	if err != nil {
 		log.Fatal().Msg(err.Error())
 	}
