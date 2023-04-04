@@ -46,12 +46,20 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.EZ_BOT_TOKEN }}
 
+      - name: Install svu
+        run: |
+          # renovate: datasource=github-releases depName=caarlos0/svu
+          export SVU_VERSION="v1.10.2"
+          curl -Lo ./svu.tar.gz "https://github.com/caarlos0/svu/releases/download/${SVU_VERSION}/svu_${SVU_VERSION#v}_linux_amd64.tar.gz"
+          tar -C "$HOME" -xzf svu.tar.gz
+          rm svu.tar.gz
+
       - name: Tag new version
         run: |
-          if [ $(git tag -l "$(svu next)") ]; then
+          if [ $(git tag -l "$(~/svu next)") ]; then
             echo "Tag already exists, no release necessary"
           else
             echo "Tagging new version"
-            git tag "$(svu next)"
+            git tag "$(~/svu next)"
             git push --tags
           fi

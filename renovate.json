@@ -48,6 +48,13 @@
       "matchStrings": ["ghcr.io/envelope-zero/frontend:(?<currentValue>.*)"],
       "depNameTemplate": "ghcr.io/envelope-zero/frontend",
       "datasourceTemplate": "docker"
+    },
+    {
+      "description": "Upgrade arbitrary dependencies in GitHub action workflows declared with 'export *_VERSION'",
+      "fileMatch": ["(^workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\s+export .*?_VERSION=\"(?<currentValue>.*)\""
+      ]
     }
   ],
   "packageRules": [
