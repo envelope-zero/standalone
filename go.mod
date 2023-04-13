@@ -6,7 +6,7 @@ require (
 	github.com/adrg/xdg v0.4.0
 	github.com/envelope-zero/backend/v2 v2.5.2
 	github.com/gin-contrib/static v0.0.2-0.20230212012409-6f6aff627ddf
-	github.com/rs/zerolog v1.29.0
+	github.com/rs/zerolog v1.29.1
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
 )
 
