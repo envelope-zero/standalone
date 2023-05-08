@@ -17,8 +17,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dustin/go-humanize v1.0.1 h1:GzkhY7T5VNhEkwH0PVJgjz+fX1rhBrR7pRT3mDkpeCY=
 github.com/dustin/go-humanize v1.0.1/go.mod h1:Mu1zIs6XwVuF/gI1OepvI0qD18qycQx+mFykh5fBlto=
-github.com/envelope-zero/backend/v2 v2.6.3 h1:ON88+Kag7wrFBLqQko7kcRT3miPvD7e37M5TS8o5wxM=
-github.com/envelope-zero/backend/v2 v2.6.3/go.mod h1:20GrGByNRUvUFpNuc/oQAymxxYQiI/Ejtwl8mssEoko=
+github.com/envelope-zero/backend/v2 v2.6.5 h1:csoJClT7J7wabOph9BVZTxmIWFGSkviaerPBa0KEMYQ=
+github.com/envelope-zero/backend/v2 v2.6.5/go.mod h1:20GrGByNRUvUFpNuc/oQAymxxYQiI/Ejtwl8mssEoko=
 github.com/gin-contrib/cors v1.4.0 h1:oJ6gwtUl3lqV0WEIwM/LxPF1QZ5qe2lGWdY2+bz7y0g=
 github.com/gin-contrib/cors v1.4.0/go.mod h1:bs9pNM0x/UsmHPBWT2xZz9ROh8xYjYkiURUfmBoMlcs=
 github.com/gin-contrib/gzip v0.0.6 h1:NjcunTcGAj5CO1gn4N8jHOSIeRFHIbn51z6K+xaN4d4=
