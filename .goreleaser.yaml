@@ -9,7 +9,7 @@ builds:
       - amd64
       - arm64
     ldflags:
-      - -X github.com/envelope-zero/backend/pkg/router.version=2.7.0
+      - -X github.com/envelope-zero/backend/pkg/router.version=2.7.1
 
 archives:
   - replacements:
