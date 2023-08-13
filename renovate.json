@@ -95,37 +95,36 @@
     },
     {
       "description": "Group backend upgrades for ldflags and go.mod",
-      "matchPackageNames": [
+      "matchPackagePatterns": [
         "envelope-zero/backend",
-        "github.com/envelope-zero/backend"
+        "github.com/envelope-zero/backend/v.*"
       ],
-      "matchPackagePatterns": ["github.com/envelope-zero/backend/v.*"],
       "groupName": "backend"
     },
     {
       "description": "Bump patch version for backend patch updates",
       "matchUpdateTypes": ["patch"],
-      "matchPackageNames": [
+      "matchPackagePatterns": [
         "envelope-zero/backend",
-        "github.com/envelope-zero/backend"
+        "github.com/envelope-zero/backend/v.*"
       ],
       "commitMessagePrefix": "fix(backend):"
     },
     {
       "description": "Bump minor version for backend minor updates",
       "matchUpdateTypes": ["minor"],
-      "matchPackageNames": [
+      "matchPackagePatterns": [
         "envelope-zero/backend",
-        "github.com/envelope-zero/backend"
+        "github.com/envelope-zero/backend/v.*"
       ],
       "commitMessagePrefix": "feat(backend):"
     },
     {
       "description": "Bump major version for backend major updates",
       "matchUpdateTypes": ["major"],
-      "matchPackageNames": [
+      "matchPackagePatterns": [
         "envelope-zero/backend",
-        "github.com/envelope-zero/backend"
+        "github.com/envelope-zero/backend/v.*"
       ],
       "commitMessagePrefix": "feat(backend)!:"
     },
