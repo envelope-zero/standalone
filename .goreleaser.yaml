@@ -11,10 +11,6 @@ builds:
     ldflags:
       - -X github.com/envelope-zero/backend/pkg/router.version=3.0.0
 
-archives:
-  - replacements:
-      amd64: x86_64
-
 snapshot:
   name_template: "{{ incpatch .Version }}-next"
 
