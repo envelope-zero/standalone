@@ -13,10 +13,10 @@ import (
 	"time"
 
 	"github.com/adrg/xdg"
-	"github.com/envelope-zero/backend/v2/pkg/controllers"
-	"github.com/envelope-zero/backend/v2/pkg/database"
-	"github.com/envelope-zero/backend/v2/pkg/models"
-	"github.com/envelope-zero/backend/v2/pkg/router"
+	"github.com/envelope-zero/backend/v3/pkg/controllers"
+	"github.com/envelope-zero/backend/v3/pkg/database"
+	"github.com/envelope-zero/backend/v3/pkg/models"
+	"github.com/envelope-zero/backend/v3/pkg/router"
 	"github.com/gin-contrib/static"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -34,7 +34,7 @@ type embedFileSystem struct {
 	http.FileSystem
 }
 
-func (e embedFileSystem) Exists(prefix, path string) bool {
+func (e embedFileSystem) Exists(_, path string) bool {
 	_, err := e.Open(path)
 	return err == nil
 }
