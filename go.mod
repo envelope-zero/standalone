@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/adrg/xdg v0.4.0
-	github.com/envelope-zero/backend/v3 v3.1.0
+	github.com/envelope-zero/backend/v3 v3.1.1
 	github.com/gin-contrib/static v0.0.1
 	github.com/rs/zerolog v1.30.0
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
@@ -55,16 +55,16 @@ require (
 	github.com/ugorji/go/codec v1.2.11 // indirect
 	github.com/wei840222/gorm-zerolog v0.0.0-20210303025759-235c42bb33fa // indirect
 	golang.org/x/arch v0.4.0 // indirect
-	golang.org/x/crypto v0.11.0 // indirect
-	golang.org/x/exp v0.0.0-20230811145659-89c5cff77bcb // indirect
-	golang.org/x/net v0.12.0 // indirect
-	golang.org/x/sys v0.10.0 // indirect
+	golang.org/x/crypto v0.12.0 // indirect
+	golang.org/x/exp v0.0.0-20230817173708-d852ddb80c63 // indirect
+	golang.org/x/net v0.14.0 // indirect
+	golang.org/x/sys v0.11.0 // indirect
 	golang.org/x/text v0.12.0 // indirect
-	golang.org/x/tools v0.7.0 // indirect
+	golang.org/x/tools v0.12.1-0.20230815132531-74c255bcf846 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	gorm.io/gorm v1.25.3 // indirect
+	gorm.io/gorm v1.25.4 // indirect
 	modernc.org/libc v1.22.5 // indirect
 	modernc.org/mathutil v1.5.0 // indirect
 	modernc.org/memory v1.5.0 // indirect
