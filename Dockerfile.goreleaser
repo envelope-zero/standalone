@@ -1,5 +1,5 @@
 # Get frontend files from current version
-FROM ghcr.io/envelope-zero/frontend:1.22.1 as frontend
+FROM ghcr.io/envelope-zero/frontend:1.22.5 as frontend
 
 FROM scratch
 WORKDIR /
