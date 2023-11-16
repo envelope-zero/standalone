@@ -20,8 +20,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dustin/go-humanize v1.0.1 h1:GzkhY7T5VNhEkwH0PVJgjz+fX1rhBrR7pRT3mDkpeCY=
 github.com/dustin/go-humanize v1.0.1/go.mod h1:Mu1zIs6XwVuF/gI1OepvI0qD18qycQx+mFykh5fBlto=
-github.com/envelope-zero/backend/v3 v3.7.0 h1:X5tVfrdnWDnEC4OBKxp3yrmPSAyHowNHZZX2GJ+fO0w=
-github.com/envelope-zero/backend/v3 v3.7.0/go.mod h1:w8z+ozTmvoeeaXS6/EC0irYOfFfVTw4L+MqOBzRLyJI=
+github.com/envelope-zero/backend/v3 v3.8.0 h1:9+Zf8QGCOGSbd8abFnQc+3RcM5cuIkAYbULc35wV3Hg=
+github.com/envelope-zero/backend/v3 v3.8.0/go.mod h1:w8z+ozTmvoeeaXS6/EC0irYOfFfVTw4L+MqOBzRLyJI=
 github.com/gabriel-vasile/mimetype v1.4.3 h1:in2uUcidCuFcDKtdcBxlR0rJ1+fsokWf+uqxgUFjbI0=
 github.com/gabriel-vasile/mimetype v1.4.3/go.mod h1:d8uq/6HKRL6CGdk+aubisF/M5GcPfT7nKyLpA0lbSSk=
 github.com/gin-contrib/cors v1.4.0 h1:oJ6gwtUl3lqV0WEIwM/LxPF1QZ5qe2lGWdY2+bz7y0g=
