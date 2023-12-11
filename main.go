@@ -77,10 +77,11 @@ func main() {
 	ctx = context.WithValue(ctx, database.ContextURL, url)
 	controller := controllers.Controller{DB: db.WithContext(ctx)}
 
-	r, err := router.Config(url)
+	r, teardown, err := router.Config(url)
 	if err != nil {
 		log.Fatal().Msg(err.Error())
 	}
+	defer teardown()
 
 	// Attach all backend routes to /api
 	router.AttachRoutes(controller, r.Group("/api/"))
