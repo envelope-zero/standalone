@@ -9,7 +9,7 @@ builds:
       - amd64
       - arm64
     ldflags:
-      - -X github.com/envelope-zero/backend/pkg/router.version=3.19.3
+      - -X github.com/envelope-zero/backend/pkg/router.version=3.19.4
 
 snapshot:
   name_template: "{{ incpatch .Version }}-next"
