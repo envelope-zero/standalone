@@ -5,6 +5,7 @@ go 1.19
 require (
 	github.com/adrg/xdg v0.4.0
 	github.com/envelope-zero/backend/v3 v3.22.2
+	github.com/envelope-zero/backend/v4 v4.1.0
 	github.com/gin-contrib/static v0.0.1
 	github.com/rs/zerolog v1.31.0
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966

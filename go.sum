@@ -27,6 +27,7 @@ github.com/dustin/go-humanize v1.0.1 h1:GzkhY7T5VNhEkwH0PVJgjz+fX1rhBrR7pRT3mDkp
 github.com/dustin/go-humanize v1.0.1/go.mod h1:Mu1zIs6XwVuF/gI1OepvI0qD18qycQx+mFykh5fBlto=
 github.com/envelope-zero/backend/v3 v3.22.2 h1:rCpVCsanWQ6xtNSV51UMqcUrKjLOlY9c1t2/oZJuf0Q=
 github.com/envelope-zero/backend/v3 v3.22.2/go.mod h1:F74rMdq7owaKWN4mhY6KAbYjA+gVoenKFa6xpOOZSSc=
+github.com/envelope-zero/backend/v4 v4.1.0/go.mod h1:F9ZicXHKFFLn6dkkL7LK8lQ5h9M942pJoC+uC0qoulQ=
 github.com/gabriel-vasile/mimetype v1.4.3 h1:in2uUcidCuFcDKtdcBxlR0rJ1+fsokWf+uqxgUFjbI0=
 github.com/gabriel-vasile/mimetype v1.4.3/go.mod h1:d8uq/6HKRL6CGdk+aubisF/M5GcPfT7nKyLpA0lbSSk=
 github.com/gin-contrib/cors v1.5.0 h1:DgGKV7DDoOn36DFkNtbHrjoRiT5ExCe+PC9/xp7aKvk=
