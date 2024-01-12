@@ -13,8 +13,6 @@ import (
 	"time"
 
 	"github.com/adrg/xdg"
-	"github.com/envelope-zero/backend/v4/pkg/controllers"
-	"github.com/envelope-zero/backend/v4/pkg/database"
 	"github.com/envelope-zero/backend/v4/pkg/models"
 	"github.com/envelope-zero/backend/v4/pkg/router"
 	"github.com/gin-contrib/static"
@@ -60,22 +58,12 @@ func main() {
 
 	dbConnectionOptions := "_pragma=foreign_keys(1)"
 
-	db, err := database.Connect(fmt.Sprintf("%s?%s", dbPath, dbConnectionOptions))
-	if err != nil {
-		log.Fatal().Msg(err.Error())
-	}
-
-	err = models.Migrate(db)
+	err = models.Connect(fmt.Sprintf("%s?%s", dbPath, dbConnectionOptions))
 	if err != nil {
 		log.Fatal().Msg(err.Error())
 	}
 
 	url, _ := url.Parse("http://localhost:3200/api")
-
-	// Set the DB context and add it to the controller
-	ctx := context.Background()
-	ctx = context.WithValue(ctx, database.ContextURL, url)
-	controller := controllers.Controller{DB: db.WithContext(ctx)}
 
 	r, teardown, err := router.Config(url)
 	if err != nil {
@@ -84,7 +72,7 @@ func main() {
 	defer teardown()
 
 	// Attach all backend routes to /api
-	router.AttachRoutes(controller, r.Group("/api/"))
+	router.AttachRoutes(r.Group("/api/"))
 
 	// Serve the frontend on /
 	r.Use(static.Serve("/", EmbedFolder(server, "public")))
