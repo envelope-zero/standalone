@@ -1,49 +1,38 @@
-# Envelope Zero Standalone version
+# Envelope Zero - Standalone version
 
-[![Release](https://img.shields.io/github/release/envelope-zero/standalone.svg?style=flat-square)](https://github.com/envelope-zero/standalone/releases/latest) [![Go Reference](https://pkg.go.dev/badge/github.com/envelope-zero/standalone.svg)](https://pkg.go.dev/github.com/envelope-zero/standalone) [![Go Report Card](https://goreportcard.com/badge/github.com/envelope-zero/standalone)](https://goreportcard.com/report/github.com/envelope-zero/standalone)
+[![Release](https://img.shields.io/github/release/envelope-zero/standalone.svg?style=flat-square)](https://github.com/envelope-zero/standalone/releases/latest)
 
-## Usage
+Envelope Zero is a zero-based envelope budgeting app. It's free, open-source and runs on all major operating systems.
+All your data is stored locally; nothing is exposed to the outside world. Your data is yours.
 
-### Quick start
+You can find a pre-built version for your OS on [the release page](https://github.com/envelope-zero/standalone/releases)
 
-Download the latest release and start the executable.
+## Quick Start
 
-## Backing up of data
+[Download the latest release](https://github.com/envelope-zero/standalone/releases/latest), decompress it, and start the executable.
 
-Envelope Zero will create an `envelope-zero` directory in the standard application data directory for your operating system. This is the following:
+Check back every now and then to see if there is a new version - to upgrade, you can simply delete the old executable and start the new one.
+
+## Backing Up Your Data
+
+Envelope Zero stores its data file in the application data directory for your operating system:
 
 - Windows: `%APPDATA%/envelope-zero`
 - macOS: `~/Library/Application Support/envelope-zero`
 - Other Unix based systems: `~/.local/share/envelope-zero`
 
-If you back up this directory, all Envelope Zero data is backed up.
+By adding this directory to your backup routine, your Envelope Zero data will be safe.
 
 ## Supported Versions
 
-This software is constantly developed, therefore only the latest version is supported. If you encounter an issue, please update to the latest version and verify that it still exists in that version.
+We are constantly developing and improving Envelope Zero.
+We welcome your ideas and bug reports! If you encounter an issue, please update to the [latest version](https://github.com/envelope-zero/standalone/releases/latest).
+If the issue still exists, let us know [by opening a bug report](https://github.com/envelope-zero/standalone/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=).
 
-Please check the [releases page](https://github.com/envelope-zero/standalone/releases) for the latest release.
+## Questions?
 
-## Versioning
+If you have questions, you can always [start a discussion](https://github.com/orgs/envelope-zero/discussions) or send the team an email at team@envelope-zero.org.
 
-This project uses [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html). This means that the version has three parts: `major.minor.patch`.
-Releases are fully automated and happen on every _feature_ and _bug fix_ that is merged into the `main` branch.
+## Further documentation
 
-The versions increase as follows:
-
-- The **major** version increases when there are breaking changes, meaning that the behavior of the software changes compared to an earlier version (unless that behavior was wrong, then it's a **patch** version increase). Please check the [upgrading documentation](docs/upgrading.md) before updating major versions!
-- The **minor** version increases when there are new features
-- The **patch** version increases when bugs are fixed.
-- If the Envelope Zero backend or frontend are updated, the version bump is the same as for the dependency that is updated
-- If a release with only dependency updates is made, it bumps the `PATCH` version.
-
-Whenever a version increases, all numbers to the right of it are reset to 0.
-
-The following things are looked at for versioning (called “public API” in Semantic Versioning):
-
-- Location of the data on your computer
-- Behavior of the application, e.g. how budget values are calculated, including new features
-
-## Contributing
-
-Please see [the contribution guidelines](CONTRIBUTING.md).
+You can find further documentation [in the `docs`](docs/index.md) directory.
