@@ -1,6 +1,6 @@
 # Upgrading
 
-This document describes breaking changes and manual actions required on major upgrades.
+This document describes the actions you need to take if an update requires manual actions.
 
 ## v1.1.0 to v2.0.0
 
