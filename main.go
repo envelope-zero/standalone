@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"embed"
-	"fmt"
 	"io/fs"
 	"net/http"
 	"net/url"
@@ -13,8 +12,8 @@ import (
 	"time"
 
 	"github.com/adrg/xdg"
-	"github.com/envelope-zero/backend/v4/pkg/models"
-	"github.com/envelope-zero/backend/v4/pkg/router"
+	"github.com/envelope-zero/backend/v5/pkg/models"
+	"github.com/envelope-zero/backend/v5/pkg/router"
 	"github.com/gin-contrib/static"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -56,9 +55,7 @@ func main() {
 	}
 	log.Info().Str("database file", dbPath).Msg("Init")
 
-	dbConnectionOptions := "_pragma=foreign_keys(1)"
-
-	err = models.Connect(fmt.Sprintf("%s?%s", dbPath, dbConnectionOptions))
+	err = models.Connect(dbPath)
 	if err != nil {
 		log.Fatal().Msg(err.Error())
 	}
