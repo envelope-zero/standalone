@@ -29,4 +29,4 @@ frontend:
 VERSION ?= $(shell git rev-parse HEAD)
 .PHONY: build
 build:
-	go build -ldflags "-X github.com/envelope-zero/backend/pkg/router.version=5.2.0"
+	go build -ldflags "-X github.com/envelope-zero/backend/pkg/router.version=5.4.0"
