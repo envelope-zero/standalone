@@ -27,7 +27,7 @@ linters:
 
 linters-settings:
   gofumpt:
-    lang-version: "1.22"
+    lang-version: "1.23"
     extra-rules: true
   gocyclo:
     min-complexity: 15
