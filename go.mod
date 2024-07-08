@@ -5,7 +5,7 @@ go 1.22
 toolchain go1.22.5
 
 require (
-	github.com/adrg/xdg v0.4.0
+	github.com/adrg/xdg v0.5.0
 	github.com/gin-contrib/static v1.1.2
 	github.com/rs/zerolog v1.33.0
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
@@ -70,7 +70,7 @@ require (
 	golang.org/x/crypto v0.23.0 // indirect
 	golang.org/x/exp v0.0.0-20240213143201-ec583247a57a // indirect
 	golang.org/x/net v0.25.0 // indirect
-	golang.org/x/sys v0.20.0 // indirect
+	golang.org/x/sys v0.22.0 // indirect
 	golang.org/x/text v0.15.0 // indirect
 	golang.org/x/tools v0.18.0 // indirect
 	google.golang.org/protobuf v1.34.1 // indirect
