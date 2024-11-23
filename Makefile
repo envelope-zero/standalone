@@ -6,7 +6,7 @@ setup-pre-commit-ci:
 .PHONY: setup
 setup: setup-pre-commit-ci
 	pre-commit install --hook-type commit-msg --hook-type pre-commit
-	go install github.com/cosmtrek/air@latest
+	go install github.com/air-verse/air@latest
 
 .PHONY: devserver
 devserver: frontend
