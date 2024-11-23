@@ -1,3 +1,6 @@
+run:
+  go: "1.23"
+
 issues:
   fix: true
 
@@ -8,11 +11,6 @@ issues:
         - gocyclo
         - errcheck
         - dupl
-
-    - path: main.go
-      linters:
-        - typecheck
-      text: "pattern public: no matching files found"
 
 linters:
   enable:
@@ -27,7 +25,6 @@ linters:
 
 linters-settings:
   gofumpt:
-    lang-version: "1.23"
     extra-rules: true
   gocyclo:
     min-complexity: 15

@@ -28,7 +28,7 @@
     {
       "description": "Upgrade go minor for golangci-lint",
       "fileMatch": ["^\\.golangci\\.yml"],
-      "matchStrings": ["lang-version: \"(?<currentValue>.*)\""],
+      "matchStrings": ["go: \"(?<currentValue>.*)\""],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "golang/go",
       "versioningTemplate": "docker"

@@ -1,12 +1,12 @@
 .PHONY: setup-pre-commit-ci
 setup-pre-commit-ci:
 # renovate: datasource=github-releases depName=golangci/golangci-lint
-	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.59.1
+	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.62.0
 
 .PHONY: setup
 setup: setup-pre-commit-ci
 	pre-commit install --hook-type commit-msg --hook-type pre-commit
-	go install github.com/cosmtrek/air@latest
+	go install github.com/air-verse/air@latest
 
 .PHONY: devserver
 devserver: frontend
@@ -23,6 +23,7 @@ coverage: test
 .PHONY: frontend
 frontend:
 	docker create --name frontend-extract ghcr.io/envelope-zero/frontend:3.3.5
+	rm -r public
 	docker cp frontend-extract:/usr/share/nginx/html public/
 	docker rm frontend-extract
 
