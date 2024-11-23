@@ -23,6 +23,7 @@ coverage: test
 .PHONY: frontend
 frontend:
 	docker create --name frontend-extract ghcr.io/envelope-zero/frontend:3.3.5
+	rm -r public
 	docker cp frontend-extract:/usr/share/nginx/html public/
 	docker rm frontend-extract
 
