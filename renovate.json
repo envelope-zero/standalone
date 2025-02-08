@@ -4,36 +4,25 @@
   "pre-commit": {
     "enabled": true
   },
-  "labels": [
-    "renovate"
-  ],
+  "labels": ["renovate"],
   "rangeStrategy": "pin",
   "rebaseWhen": "behind-base-branch",
   "semanticCommits": "enabled",
   "platformAutomerge": true,
-  "postUpdateOptions": [
-    "gomodTidy",
-    "gomodUpdateImportPaths"
-  ],
+  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
   "customManagers": [
     {
       "customType": "regex",
       "description": "Upgrade go version",
-      "fileMatch": [
-        "(^workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "go-version:\\s(?<currentValue>.*)"
-      ],
+      "fileMatch": ["(^workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$"],
+      "matchStrings": ["go-version:\\s(?<currentValue>.*)"],
       "datasourceTemplate": "golang-version",
       "depNameTemplate": "go"
     },
     {
       "customType": "regex",
       "description": "Upgrade arbitrary go module versions in Makefiles",
-      "fileMatch": [
-        "^Makefile"
-      ],
+      "fileMatch": ["^Makefile"],
       "matchStrings": [
         "# renovate:\\sdatasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\s.*@(?<currentValue>.*)"
       ]
@@ -41,10 +30,7 @@
     {
       "customType": "regex",
       "description": "Upgrade backend version in ldflags",
-      "fileMatch": [
-        "^\\.goreleaser.yaml",
-        "Makefile"
-      ],
+      "fileMatch": ["^\\.goreleaser.yaml", "Makefile"],
       "matchStrings": [
         "-X github.com/envelope-zero/backend/pkg/router\\.version=(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
@@ -54,21 +40,15 @@
     {
       "customType": "regex",
       "description": "Update frontend extract command in Makefile",
-      "fileMatch": [
-        "Makefile"
-      ],
-      "matchStrings": [
-        "ghcr.io/envelope-zero/frontend:(?<currentValue>.*)"
-      ],
+      "fileMatch": ["Makefile"],
+      "matchStrings": ["ghcr.io/envelope-zero/frontend:(?<currentValue>.*)"],
       "depNameTemplate": "ghcr.io/envelope-zero/frontend",
       "datasourceTemplate": "docker"
     },
     {
       "customType": "regex",
       "description": "Upgrade arbitrary dependencies in GitHub action workflows declared with 'export *_VERSION'",
-      "fileMatch": [
-        "(^workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$"
-      ],
+      "fileMatch": ["(^workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\s+export .*?_VERSION=\"(?<currentValue>.*)\""
       ]
@@ -77,20 +57,14 @@
   "packageRules": [
     {
       "description": "Pin GitHub action digests",
-      "matchDepTypes": [
-        "action"
-      ],
+      "matchDepTypes": ["action"],
       "rangeStrategy": "pin",
       "pinDigests": true
     },
     {
       "description": "Remove v from backend version as it is used in the API version",
-      "matchPackageNames": [
-        "envelope-zero/backend"
-      ],
-      "matchDatasources": [
-        "github-releases"
-      ],
+      "matchPackageNames": ["envelope-zero/backend"],
+      "matchDatasources": ["github-releases"],
       "extractVersion": "^v(?<version>.*)"
     },
     {
@@ -102,19 +76,12 @@
         "pre-commit",
         "custom.regex"
       ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "digest"
-      ],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
       "automerge": true
     },
     {
       "description": "Group go upgrades",
-      "matchPackageNames": [
-        "go",
-        "golang"
-      ],
+      "matchPackageNames": ["go", "golang"],
       "groupName": "go"
     },
     {
@@ -127,9 +94,7 @@
     },
     {
       "description": "Bump patch version for backend patch updates",
-      "matchUpdateTypes": [
-        "patch"
-      ],
+      "matchUpdateTypes": ["patch"],
       "commitMessagePrefix": "fix(backend):",
       "matchPackageNames": [
         "/envelope-zero/backend/",
@@ -138,9 +103,7 @@
     },
     {
       "description": "Bump minor version for backend minor updates",
-      "matchUpdateTypes": [
-        "minor"
-      ],
+      "matchUpdateTypes": ["minor"],
       "commitMessagePrefix": "feat(backend):",
       "matchPackageNames": [
         "/envelope-zero/backend/",
@@ -149,9 +112,7 @@
     },
     {
       "description": "Bump major version for backend major updates",
-      "matchUpdateTypes": [
-        "major"
-      ],
+      "matchUpdateTypes": ["major"],
       "commitMessagePrefix": "feat(backend)!:",
       "matchPackageNames": [
         "/envelope-zero/backend/",
@@ -160,32 +121,20 @@
     },
     {
       "description": "Bump patch version for frontend patch updates",
-      "matchUpdateTypes": [
-        "patch"
-      ],
-      "matchPackageNames": [
-        "ghcr.io/envelope-zero/frontend"
-      ],
+      "matchUpdateTypes": ["patch"],
+      "matchPackageNames": ["ghcr.io/envelope-zero/frontend"],
       "commitMessagePrefix": "fix(frontend):"
     },
     {
       "description": "Bump minor version for frontend minor updates",
-      "matchUpdateTypes": [
-        "minor"
-      ],
-      "matchPackageNames": [
-        "ghcr.io/envelope-zero/frontend"
-      ],
+      "matchUpdateTypes": ["minor"],
+      "matchPackageNames": ["ghcr.io/envelope-zero/frontend"],
       "commitMessagePrefix": "feat(frontend):"
     },
     {
       "description": "Bump major version for frontend major updates",
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "matchPackageNames": [
-        "ghcr.io/envelope-zero/frontend"
-      ],
+      "matchUpdateTypes": ["major"],
+      "matchPackageNames": ["ghcr.io/envelope-zero/frontend"],
       "commitMessagePrefix": "feat(frontend)!:"
     }
   ]
