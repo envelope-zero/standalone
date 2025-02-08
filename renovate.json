@@ -26,14 +26,6 @@
       ]
     },
     {
-      "description": "Upgrade go minor for golangci-lint",
-      "fileMatch": ["^\\.golangci\\.yml"],
-      "matchStrings": ["go: \"(?<currentValue>.*)\""],
-      "datasourceTemplate": "github-tags",
-      "depNameTemplate": "golang/go",
-      "versioningTemplate": "docker"
-    },
-    {
       "description": "Upgrade backend version in ldflags",
       "fileMatch": ["^\\.goreleaser.yaml", "Makefile"],
       "matchStrings": [
@@ -69,12 +61,6 @@
       "matchPackageNames": ["envelope-zero/backend"],
       "matchDatasources": ["github-releases"],
       "extractVersion": "^v(?<version>.*)"
-    },
-    {
-      "description": "Parse go version for golangci-lint from GitHub tags",
-      "extractVersion": "^go(?<version>\\d+\\.\\d+)",
-      "matchPackageNames": ["golang/go"],
-      "groupName": "go"
     },
     {
       "description": "Automatically merge minor updates",
