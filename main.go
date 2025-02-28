@@ -12,8 +12,8 @@ import (
 	"time"
 
 	"github.com/adrg/xdg"
-	"github.com/envelope-zero/backend/v5/pkg/models"
-	"github.com/envelope-zero/backend/v5/pkg/router"
+	"github.com/envelope-zero/backend/v7/pkg/db"
+	"github.com/envelope-zero/backend/v7/pkg/router"
 	"github.com/gin-contrib/static"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -55,7 +55,7 @@ func main() {
 	}
 	log.Info().Str("database file", dbPath).Msg("Init")
 
-	err = models.Connect(dbPath)
+	err = db.Connect(dbPath)
 	if err != nil {
 		log.Fatal().Msg(err.Error())
 	}
