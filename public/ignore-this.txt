@@ -1,1 +1,1 @@
-This is a placeholder file to enable typechecking. It is deleted when building the actual OCI image.
+This is a placeholder file to enable typechecking.

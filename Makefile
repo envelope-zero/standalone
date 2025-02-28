@@ -22,10 +22,10 @@ coverage: test
 
 .PHONY: frontend
 frontend:
-	docker create --name frontend-extract ghcr.io/envelope-zero/frontend:4.1.0
-	rm -r public
-	docker cp frontend-extract:/usr/share/nginx/html public/
-	docker rm frontend-extract
+	podman create --name frontend-extract ghcr.io/envelope-zero/frontend:4.1.0
+	find public -mindepth 1 -not -name ignore-this.txt -delete
+	podman cp frontend-extract:/usr/share/nginx/html/. public
+	podman rm frontend-extract
 
 VERSION ?= $(shell git rev-parse HEAD)
 .PHONY: build
