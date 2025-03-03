@@ -1,7 +1,7 @@
 .PHONY: setup-pre-commit-ci
 setup-pre-commit-ci:
 # renovate: datasource=github-releases depName=golangci/golangci-lint
-	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.64.5
+	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.64.6
 
 .PHONY: setup
 setup: setup-pre-commit-ci
