@@ -22,7 +22,7 @@ coverage: test
 
 .PHONY: frontend
 frontend:
-	podman create --name frontend-extract ghcr.io/envelope-zero/frontend:4.2.1
+	podman create --name frontend-extract ghcr.io/envelope-zero/frontend:4.2.3
 	find public -mindepth 1 -not -name ignore-this.txt -delete
 	podman cp frontend-extract:/usr/share/nginx/html/. public
 	podman rm frontend-extract
