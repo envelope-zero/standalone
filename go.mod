@@ -2,7 +2,7 @@ module github.com/envelope-zero/standalone
 
 go 1.24.0
 
-toolchain go1.25.4
+toolchain go1.25.5
 
 require (
 	github.com/adrg/xdg v0.5.3
