@@ -7,7 +7,7 @@ toolchain go1.26.1
 require (
 	github.com/adrg/xdg v0.5.3
 	github.com/gin-contrib/static v1.1.5
-	github.com/rs/zerolog v1.34.0
+	github.com/rs/zerolog v1.35.0
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
 )
 
