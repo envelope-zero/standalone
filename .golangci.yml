@@ -1,31 +1,47 @@
+version: "2"
+
 issues:
   fix: true
-
-  # Relax rules for tests
-  exclude-rules:
-    - path: _test\.go
-      linters:
-        - gocyclo
-        - errcheck
-        - dupl
 
 linters:
   enable:
     - gocyclo
     - godot
-    - gofumpt
-    - goimports
     - govet
     - revive
     - whitespace
     - misspell
 
-linters-settings:
-  gofumpt:
-    extra-rules: true
-  gocyclo:
-    min-complexity: 15
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
 
-  godot:
-    exclude:
-      - "^ @[A-Za-z]+ "
+    rules:
+      - linters:
+          - dupl
+          - errcheck
+          - gocyclo
+        path: _test\.go
+
+  settings:
+    godot:
+      exclude:
+        - "^ @[A-Za-z]+ "
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+
+  settings:
+    gofumpt:
+      extra-rules: true
+    gocyclo:
+      min-complexity: 15
+
+  exclusions:
+    generated: lax
