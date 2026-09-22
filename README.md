@@ -1,5 +1,7 @@
 # Envelope Zero - Standalone version
 
+:warning: The Envelope Zero project is archived. No new releases will be published. Check the [project overview](https://github.com/envelope-zero) for more details.
+
 [![Release](https://img.shields.io/github/release/envelope-zero/standalone.svg?style=flat-square)](https://github.com/envelope-zero/standalone/releases/latest)
 
 Envelope Zero is a zero-based envelope budgeting app. It's free, open-source and runs on all major operating systems.
